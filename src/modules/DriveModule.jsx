@@ -14,8 +14,8 @@ export default function DriveModule() {
   const [loading, setLoading] = useState(false);
 
   // Input states
-  const [userEmail, setUserEmail] = useState(config.adminEmail || 'anushka.p@demo.econz.net');
-  const [domainName, setDomainName] = useState(config.domain || 'demo.econz.net');
+  const [userEmail, setUserEmail] = useState(config.adminEmail || '');
+  const [domainName, setDomainName] = useState(config.domain || '');
   const [deleteFileId, setDeleteFileId] = useState('');
 
   // Results state
@@ -125,7 +125,7 @@ export default function DriveModule() {
             <form onSubmit={handleFetchUserFiles} className="flex flex-col sm:flex-row gap-3 max-w-lg">
               <input
                 type="email"
-                placeholder="anushka.p@demo.econz.net"
+                placeholder="user@yourcompany.com"
                 value={userEmail}
                 onChange={e => setUserEmail(e.target.value)}
                 className="flex-1 px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -153,7 +153,7 @@ export default function DriveModule() {
             <form onSubmit={handleFetchDomainFiles} className="flex flex-col sm:flex-row gap-3 max-w-lg">
               <input
                 type="text"
-                placeholder="demo.econz.net"
+                placeholder="yourcompany.com"
                 value={domainName}
                 onChange={e => setDomainName(e.target.value)}
                 className="flex-1 px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"

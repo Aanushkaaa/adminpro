@@ -13,7 +13,7 @@ export default function AliasesModule() {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [domain, setDomain] = useState(config.domain || 'demo.econz.net');
+  const [domain, setDomain] = useState(config.domain || '');
   const [primaryEmail, setPrimaryEmail] = useState('');
   const [aliasInput, setAliasInput] = useState('');
   const [aliases, setAliases] = useState([]);
@@ -136,7 +136,7 @@ export default function AliasesModule() {
                 type="text"
                 value={domain}
                 onChange={e => setDomain(e.target.value)}
-                placeholder="user@demo.econz.net or demo.econz.net"
+                placeholder="user@yourcompany.com or yourcompany.com"
                 className="flex-1 px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
               />
               <button
@@ -155,7 +155,7 @@ export default function AliasesModule() {
               <EmptyState
                 icon={AtSign}
                 title="No User Aliases Retrieved"
-                description="Enter a primary email (e.g. anushka.p@demo.econz.net) or domain name above and click 'Load Domain & User Aliases'."
+                description="Enter a primary email (e.g. user@yourcompany.com) or domain name above and click 'Load Domain & User Aliases'."
               />
             )}
 
@@ -256,7 +256,7 @@ export default function AliasesModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Primary Email / Target Account</label>
               <input
                 type="email"
-                placeholder="user@demo.econz.net"
+                placeholder="user@yourcompany.com"
                 value={primaryEmail}
                 onChange={e => setPrimaryEmail(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -267,7 +267,7 @@ export default function AliasesModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">New Aliases (Comma Separated)</label>
               <input
                 type="text"
-                placeholder="alias1@demo.econz.net, alias2@demo.econz.net"
+                placeholder="alias1@yourcompany.com, alias2@yourcompany.com"
                 value={aliasInput}
                 onChange={e => setAliasInput(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -299,7 +299,7 @@ export default function AliasesModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Primary Email Account</label>
               <input
                 type="email"
-                placeholder="user@demo.econz.net"
+                placeholder="user@yourcompany.com"
                 value={primaryEmail}
                 onChange={e => setPrimaryEmail(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none"
@@ -310,7 +310,7 @@ export default function AliasesModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Alias Address To Delete</label>
               <input
                 type="text"
-                placeholder="old-alias@demo.econz.net"
+                placeholder="old-alias@yourcompany.com"
                 value={aliasInput}
                 onChange={e => setAliasInput(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none"

@@ -87,7 +87,7 @@ export default function SignaturesModule() {
     setUsers([...users, {
       id: newId,
       name: 'New User',
-      email: `user${newId}@demo.econz.net`,
+      email: `user${newId}@yourcompany.com`,
       position: 'Team Member',
       dept: 'General',
       company: 'Econz Digital',
@@ -124,12 +124,12 @@ export default function SignaturesModule() {
 
   // Preview replacement using first user's values or fallback
   const previewSample = users[0] || {
-    name: 'Anushka P',
-    position: 'Super Admin',
-    dept: 'IT Admin',
-    company: 'Econz Digital',
-    email: 'anushka.p@demo.econz.net',
-    pin: '+91 98765 43210'
+    name: 'Alex Morgan',
+    position: 'Operations Lead',
+    dept: 'Operations',
+    company: 'Enterprise Inc',
+    email: 'alex.morgan@yourcompany.com',
+    pin: '+1 (555) 019-2834'
   };
 
   const previewHtml = templateHtml

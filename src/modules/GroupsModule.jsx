@@ -17,7 +17,7 @@ export default function GroupsModule() {
   const [loading, setLoading] = useState(false);
 
   // Form states
-  const [domain, setDomain] = useState(config.domain || 'demo.econz.net');
+  const [domain, setDomain] = useState(config.domain || '');
   const [groups, setGroups] = useState([]);
   
   // Single Group creation
@@ -249,7 +249,7 @@ export default function GroupsModule() {
                 type="text"
                 value={domain}
                 onChange={e => setDomain(e.target.value)}
-                placeholder="demo.econz.net"
+                placeholder="yourcompany.com"
                 className="flex-1 px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
               />
               <button
@@ -323,7 +323,7 @@ export default function GroupsModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Group Email</label>
               <input
                 type="email"
-                placeholder="sales-team@demo.econz.net"
+                placeholder="sales-team@yourcompany.com"
                 value={newGroupEmail}
                 onChange={e => setNewGroupEmail(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -372,7 +372,7 @@ export default function GroupsModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Target Group Email</label>
               <input
                 type="email"
-                placeholder="sales-team@demo.econz.net"
+                placeholder="sales-team@yourcompany.com"
                 value={targetGroupEmail}
                 onChange={e => setTargetGroupEmail(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -383,7 +383,7 @@ export default function GroupsModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">New Member Email</label>
               <input
                 type="email"
-                placeholder="user@demo.econz.net"
+                placeholder="user@yourcompany.com"
                 value={newMemberEmail}
                 onChange={e => setNewMemberEmail(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -425,7 +425,7 @@ export default function GroupsModule() {
                 type="email"
                 value={targetGroupEmail}
                 onChange={e => setTargetGroupEmail(e.target.value)}
-                placeholder="sales-team@demo.econz.net"
+                placeholder="sales-team@yourcompany.com"
                 className="flex-1 px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 required
               />
@@ -498,7 +498,7 @@ export default function GroupsModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Group Email</label>
               <input
                 type="email"
-                placeholder="sales-team@demo.econz.net"
+                placeholder="sales-team@yourcompany.com"
                 value={settingsGroupEmail}
                 onChange={e => setSettingsGroupEmail(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -555,10 +555,10 @@ export default function GroupsModule() {
               rows={6}
               placeholder={
                 activeSubTab.includes('delete_groups')
-                  ? "group1@demo.econz.net\ngroup2@demo.econz.net"
+                  ? "group1@yourcompany.com\ngroup2@yourcompany.com"
                   : activeSubTab.includes('delete_members')
-                  ? "group1@demo.econz.net, user1@demo.econz.net\ngroup1@demo.econz.net, user2@demo.econz.net"
-                  : "sales@demo.econz.net, Sales Team, Sales Group\nsupport@demo.econz.net, Support Team, Support Group"
+                  ? "group1@yourcompany.com, user1@yourcompany.com\ngroup1@yourcompany.com, user2@yourcompany.com"
+                  : "sales@yourcompany.com, Sales Team, Sales Group\nsupport@yourcompany.com, Support Team, Support Group"
               }
               value={bulkInputText}
               onChange={e => setBulkInputText(e.target.value)}

@@ -120,7 +120,7 @@ export async function fetchAccessTokenFromServiceAccount(saInput, adminEmail) {
 }
 
 export async function getUserOrSessionToken(config, userEmail) {
-  const targetEmail = userEmail || config?.adminEmail || 'anushka.p@demo.econz.net';
+  const targetEmail = userEmail || config?.adminEmail || '';
   if (config?.serviceAccountJson) {
     try {
       const token = await fetchAccessTokenFromServiceAccount(config.serviceAccountJson, targetEmail);
@@ -132,7 +132,7 @@ export async function getUserOrSessionToken(config, userEmail) {
   return config?.accessToken || null;
 }
 
-function cleanDomain(input, defaultDomain = 'demo.econz.net') {
+function cleanDomain(input, defaultDomain = '') {
   if (!input) return defaultDomain;
   let str = input.trim();
   if (str.includes('@')) {
@@ -379,7 +379,7 @@ export async function apiGenerateDomainSpaceReport(config, domainInput) {
     { spaceName: 'Training', members: 'Access denied (admin not a member)' },
     { spaceName: 'IT Team', members: 'Access denied (admin not a member)' },
     { spaceName: 'Demo Test', members: 'Access denied (admin not a member)' },
-    { spaceName: 'Bulk users', members: 'firdaus.j@demo.econz.net, akhin@demo.econz.net, anushka.p@demo.econz.net, anaswara.vvvv@demo.econz.net' }
+    { spaceName: 'Bulk users', members: 'user1@yourcompany.com, user2@yourcompany.com, user3@yourcompany.com' }
   ];
 
   try {
@@ -479,7 +479,7 @@ export async function apiFetchSignatureUsersFromSheet(config) {
         return data.values.map((row, idx) => ({
           id: idx + 1,
           name: row[0] || 'User Name',
-          email: row[1] || 'user@demo.econz.net',
+          email: row[1] || 'user@yourcompany.com',
           position: row[2] || 'Position',
           dept: row[3] || 'Department',
           company: row[4] || 'Econz Digital',
@@ -511,9 +511,9 @@ export async function apiFetchSignatureUsersFromSheet(config) {
   }
 
   return [
-    { id: 1, name: 'Anushka P', email: 'anushka.p@demo.econz.net', position: 'Super Admin', dept: 'IT Admin', company: 'Econz Digital', pin: '+91 98765 43210', status: 'Not Deployed' },
-    { id: 2, name: 'Akhin', email: 'akhin@demo.econz.net', position: 'Senior Engineer', dept: 'Engineering', company: 'Econz Digital', pin: '+91 98765 43211', status: 'Not Deployed' },
-    { id: 3, name: 'Firdaus J', email: 'firdaus.j@demo.econz.net', position: 'Cloud Consultant', dept: 'Operations', company: 'Econz Digital', pin: '+91 98765 43212', status: 'Not Deployed' }
+    { id: 1, name: 'Alex Morgan', email: 'alex.morgan@yourcompany.com', position: 'Super Admin', dept: 'IT Admin', company: 'Enterprise Inc', pin: '+1 (555) 019-2834', status: 'Not Deployed' },
+    { id: 2, name: 'Jordan Lee', email: 'jordan.l@yourcompany.com', position: 'Senior Engineer', dept: 'Engineering', company: 'Enterprise Inc', pin: '+1 (555) 019-2835', status: 'Not Deployed' },
+    { id: 3, name: 'Taylor Reed', email: 'taylor.r@yourcompany.com', position: 'Cloud Consultant', dept: 'Operations', company: 'Enterprise Inc', pin: '+1 (555) 019-2836', status: 'Not Deployed' }
   ];
 }
 
@@ -791,7 +791,7 @@ export async function apiListAliases(config, inputDomainOrEmail) {
   const token = await getUserOrSessionToken(config);
   if (!token) throw new Error("Access Token required.");
 
-  const strInput = (inputDomainOrEmail || config.domain || 'demo.econz.net').trim();
+  const strInput = (inputDomainOrEmail || config.domain || 'yourcompany.com').trim();
 
   // If a single user email is provided (contains '@')
   if (strInput.includes('@')) {

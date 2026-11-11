@@ -17,8 +17,8 @@ export default function ChatModule() {
   const [loading, setLoading] = useState(false);
 
   // Form states
-  const [userEmail, setUserEmail] = useState(config.adminEmail || 'anushka.p@demo.econz.net');
-  const [domainName, setDomainName] = useState(config.domain || 'demo.econz.net');
+  const [userEmail, setUserEmail] = useState(config.adminEmail || '');
+  const [domainName, setDomainName] = useState(config.domain || '');
   const [spaceName, setSpaceName] = useState('');
   const [memberEmail, setMemberEmail] = useState('');
   const [deleteSpaceId, setDeleteSpaceId] = useState('');
@@ -186,7 +186,7 @@ export default function ChatModule() {
             <form onSubmit={handleFetchChats} className="flex flex-col sm:flex-row gap-3 max-w-lg">
               <input
                 type="email"
-                placeholder="anushka.p@demo.econz.net"
+                placeholder="user@yourcompany.com"
                 value={userEmail}
                 onChange={e => setUserEmail(e.target.value)}
                 className="flex-1 px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -260,7 +260,7 @@ export default function ChatModule() {
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Domain Name</label>
                 <input
                   type="text"
-                  placeholder="demo.econz.net"
+                  placeholder="yourcompany.com"
                   value={domainName}
                   onChange={e => setDomainName(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -322,7 +322,7 @@ export default function ChatModule() {
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Domain Name</label>
                 <input
                   type="text"
-                  placeholder="demo.econz.net"
+                  placeholder="yourcompany.com"
                   value={domainName}
                   onChange={e => setDomainName(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -429,7 +429,7 @@ export default function ChatModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Initial Member Email</label>
               <input
                 type="email"
-                placeholder="user@demo.econz.net"
+                placeholder="user@yourcompany.com"
                 value={memberEmail}
                 onChange={e => setMemberEmail(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -456,7 +456,7 @@ export default function ChatModule() {
             </div>
             <textarea
               rows={6}
-              placeholder="Engineering Space, dev1@demo.econz.net\nSales Space, lead@demo.econz.net"
+              placeholder="Engineering Space, dev1@yourcompany.com\nSales Space, lead@yourcompany.com"
               value={bulkInput}
               onChange={e => setBulkInput(e.target.value)}
               className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-xs font-mono focus:ring-2 focus:ring-indigo-500 focus:outline-none"

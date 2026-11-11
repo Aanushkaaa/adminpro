@@ -74,10 +74,10 @@ export default function Navbar({ onOpenCommandPalette }) {
               <KeyRound className="w-3.5 h-3.5 text-slate-500" />
               <div>
                 <div className="text-xs font-mono font-bold text-slate-900 leading-tight">
-                  {config.adminEmail || 'anushka.p@demo.econz.net'}
+                  {config.adminEmail || 'admin@yourcompany.com'}
                 </div>
                 <div className="text-[10px] font-mono text-slate-500 leading-tight">
-                  {config.domain || 'demo.econz.net'}
+                  {config.domain || 'yourcompany.com'}
                 </div>
               </div>
             </div>

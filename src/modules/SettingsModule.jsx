@@ -9,9 +9,9 @@ const defaultSaJson = `{
   "project_id": "your-gcp-project-id",
   "private_key_id": "your-private-key-id",
   "private_key": "-----BEGIN PRIVATE KEY-----\\nPASTE_YOUR_SERVICE_ACCOUNT_PRIVATE_KEY_HERE\\n-----END PRIVATE KEY-----\\n",
-  "client_email": "econzadminpro@gam-project-qt1qf.iam.gserviceaccount.com",
-  "client_id": "100592473160928860535",
-  "admin_email": "anushka.p@demo.econz.net"
+  "client_email": "your-service-account@your-gcp-project.iam.gserviceaccount.com",
+  "client_id": "YOUR_NUMERIC_CLIENT_ID",
+  "admin_email": "admin@yourcompany.com"
 }`;
 
 export default function SettingsModule() {
@@ -19,11 +19,11 @@ export default function SettingsModule() {
   const [showDwdGuide, setShowDwdGuide] = useState(false);
   const [copiedScopes, setCopiedScopes] = useState(false);
   const [formData, setFormData] = useState({
-    adminEmail: config.adminEmail || 'anushka.p@demo.econz.net',
-    domain: config.domain || 'demo.econz.net',
-    sheetId: config.sheetId || '1WXt7PFd94nDjKcbNc2LWHoq-F2D47DQ_vAZCh8F9dI',
+    adminEmail: config.adminEmail || '',
+    domain: config.domain || '',
+    sheetId: config.sheetId || '',
     accessToken: config.accessToken || '',
-    serviceAccountJson: config.serviceAccountJson || defaultSaJson,
+    serviceAccountJson: config.serviceAccountJson || '',
     clientLogoUrl: config.clientLogoUrl || '',
   });
 
@@ -104,7 +104,7 @@ export default function SettingsModule() {
               <label className="block text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest mb-1">Super Admin Email</label>
               <input
                 type="email"
-                placeholder="anushka.p@demo.econz.net"
+                placeholder="admin@yourcompany.com"
                 value={formData.adminEmail}
                 onChange={e => setFormData({ ...formData, adminEmail: e.target.value })}
                 className="w-full px-3 py-2 rounded-md border border-slate-300 text-xs font-mono focus:border-slate-900 focus:outline-none"
@@ -115,7 +115,7 @@ export default function SettingsModule() {
               <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Workspace Domain</label>
               <input
                 type="text"
-                placeholder="demo.econz.net"
+                placeholder="yourcompany.com"
                 value={formData.domain}
                 onChange={e => setFormData({ ...formData, domain: e.target.value })}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"

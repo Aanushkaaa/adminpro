@@ -184,7 +184,7 @@ export default function GeminiHrModule() {
               <Bot className="w-4 h-4 text-slate-300" />
               <span>GEMINI HR EVALUATION AGENT</span>
             </div>
-            <span className="text-[10px] text-slate-400 font-sans">demo.econz.net</span>
+            <span className="text-[10px] text-slate-400 font-sans font-mono uppercase tracking-wider">AI HR ASSISTANT</span>
           </div>
 
           <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-50">

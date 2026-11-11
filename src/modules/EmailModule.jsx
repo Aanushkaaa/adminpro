@@ -81,7 +81,7 @@ export default function EmailModule() {
     setLoading(true);
     setStatus(null);
     try {
-      const res = await apiDomainRecallEmail(config, recallSender, recallQuery, config.domain || 'demo.econz.net');
+      const res = await apiDomainRecallEmail(config, recallSender, recallQuery, config.domain || 'yourcompany.com');
       setStatus({ type: 'success', message: res.message });
     } catch (err) {
       setStatus({ type: 'error', message: err.message });
@@ -138,7 +138,7 @@ export default function EmailModule() {
             <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">User Email Address</label>
             <input
               type="email"
-              placeholder="anushka.p@demo.econz.net"
+              placeholder="user@yourcompany.com"
               value={targetEmail}
               onChange={e => setTargetEmail(e.target.value)}
               className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -171,7 +171,7 @@ export default function EmailModule() {
           <form onSubmit={handleListEmails} className="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col sm:flex-row gap-3 max-w-xl shadow-sm">
             <input
               type="email"
-              placeholder="Enter user email address (e.g. user@demo.econz.net)"
+              placeholder="Enter user email address (e.g. user@yourcompany.com)"
               value={targetEmail}
               onChange={e => setTargetEmail(e.target.value)}
               className="flex-1 px-3.5 py-2 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
