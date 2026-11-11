@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+build/
+.vercel/
+
+# Environment variables & secrets
+.env
+*.env
+*.json.secret
+
+# Agent local metadata
+.agent/
+.gemini/
+.impeccable/
+
+# IDE & OS files
+.DS_Store
+.idea/
+.vscode/
