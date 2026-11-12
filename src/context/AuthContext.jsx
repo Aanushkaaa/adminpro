@@ -6,7 +6,7 @@ export const AuthProvider = ({ children }) => {
   // All configuration credentials are held in browser memory / sessionStorage ONLY.
   // NO data is stored on external developer databases.
   const [config, setConfig] = useState(() => {
-    const saved = sessionStorage.getItem('gws_admin_config');
+    const saved = localStorage.getItem('gws_admin_config') || sessionStorage.getItem('gws_admin_config');
     return saved ? JSON.parse(saved) : {
       adminEmail: '',
       domain: '',
@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    sessionStorage.setItem('gws_admin_config', JSON.stringify(config));
+    localStorage.setItem('gws_admin_config', JSON.stringify(config));
   }, [config]);
 
   const updateConfig = (newSettings) => {
@@ -30,6 +30,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const clearConfig = () => {
+    localStorage.removeItem('gws_admin_config');
     sessionStorage.removeItem('gws_admin_config');
     setConfig({
       adminEmail: '',
